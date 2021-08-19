@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../node_modules/deck-of-cards/example/example.css'
 import './App.css';
 import Home from './components/Home'
 import Magic1 from './components/Magic1'
@@ -17,7 +17,7 @@ function App() {
     <Route path= "/" exact component={Home}/>
     <Route path="/magic" component={Magic1} />
     </Switch>
-
+    
     </div>
     
     </Router>

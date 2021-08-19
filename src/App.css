@@ -1,3 +1,10 @@
+html{
+  overflow-y: hidden;
+}
+body{
+  background-color: #fdfdfd;
+  overflow-y:scroll ;
+}
 .columns{
   display: flex;
   flex-direction: column;
@@ -16,4 +23,25 @@
 }
 .is-hidden{
   display: none;
+}
+
+#stage, .subdeck{
+  position: relative;
+  top: 200px;
+  left: 200px;
+}
+#subdeck1{
+  position: relative;
+  top: 400px;
+  left: 20px;
+}
+#subdeck2{
+  position: relative;
+  top: 400px;
+  left: 100px;
+}
+#subdeck3{
+  position: relative;
+  top: 400px;
+  left: 180px;
 }
