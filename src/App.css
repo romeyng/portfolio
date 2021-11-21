@@ -1,47 +1,231 @@
-html{
-  overflow-y: hidden;
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;700&display=swap");
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: 'M PLUS Rounded 1c', sans-serif, Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
 }
-body{
-  background-color: #fdfdfd;
-  overflow-y:scroll ;
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-.columns{
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  margin-left: 8px;
+
+a {
+  text-decoration: none;
+}
+
+img {
   width: 100%;
 }
-.rows{
+
+.nav-container {
+  background-color: #e7e3e4;
+}
+
+.nav-container a {
+  color: #596c73;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  margin-top: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em;
 }
-.column{
-  background-color: beige;
-  flex-grow: 1;
+
+header .logo {
+  color: #f9866f;
+  font-weight: bold;
 }
-.is-hidden{
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul a {
+  display: block;
+  padding: 0 1em;
+}
+
+.hero-design, .hero-design2, .hero-design3 {
   display: none;
 }
 
-#stage {
-  position: relative;
-  top: 200px;
-  left: 300px;
+.hero {
+  background-color: #596c73;
+  color: #e7e3e4;
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  padding: 4em;
 }
-#subdeck1{
-  position: relative;
-  top: 400px;
-  left: 300px;
+
+.section {
+  padding: 4em 2em;
+  text-align: center;
 }
-#subdeck2{
-  position: relative;
-  top: 400px;
-  
+
+.icon-container img {
+  width: 70px;
+  height: 70px;
 }
-#subdeck3{
+
+.featured {
   position: relative;
-  top: 400px;
-  
+  text-align: center;
 }
+
+.featured img {
+  width: 200px;
+  height: 200px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+  color: #f9866f;
+  font-size: .9em;
+}
+
+.featured-title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: -.1em;
+  display: block;
+}
+
+.featured-desc {
+  color: #353535;
+  font-size: .9em;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.skills {
+  background: #b1bdb9;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.skills-container ul li {
+  background: white;
+  padding: 2em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.skills-container .icon-container {
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
+}
+
+.skill-title {
+  font-weight: bold;
+}
+
+.skill-desc {
+  margin-bottom: 1em;
+  color: #353535;
+}
+
+.call-to-action {
+  background: white;
+  text-align: center;
+}
+
+.cta-container {
+  color: #f9866f;
+  padding: 4em;
+  background-color: #e7e3e4;
+  font-size: 1em;
+  display: block;
+  text-align: center;
+}
+
+.cta-container a {
+  text-decoration: none;
+  color: #f9866f;
+}
+
+@media only screen and (min-width: 800px) {
+  .featured, .call-to-action {
+    text-align: left;
+  }
+  .featured {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% auto;
+        grid-template-columns: 40% auto;
+  }
+  .left {
+    margin-left: 2em;
+    margin-top: 1em;
+  }
+  .left, .right {
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
+  .skills {
+    margin-bottom: -1.9em;
+  }
+  .skills-container ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+    gap: 1em;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .hero {
+    height: 90vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 66% auto;
+        grid-template-columns: 66% auto;
+    background: unset;
+    padding: 0;
+  }
+  .hero .content {
+    background: #596c73;
+    padding: 6em 8em 6em 4em;
+    text-align: left;
+  }
+  .hero .content h1 {
+    font-size: 3em;
+    line-height: 1.2em;
+  }
+  .hero-design {
+    display: unset;
+    margin-left: -50%;
+    margin-top: 15%;
+    width: 100%;
+  }
+  .nav-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 66% auto;
+        grid-template-columns: 66% auto;
+  }
+  header {
+    padding: 2em 2em 2em 4em;
+  }
+}
+/*# sourceMappingURL=App.css.map */

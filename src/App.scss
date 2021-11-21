@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;700&display=swap');
+$bold-color: #f9866f;
+$dark-color:#596c73;
+$accent-color: #b1bdb9;
+$bold-compliment: #e7e3e4;
+$theme-gray: #f2f2f2;
+$light-dark-text: #353535;
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: $theme-gray;
+    font-family: 'M PLUS Rounded 1c', sans-serif, Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+.nav-container {
+    background-color: $bold-compliment;
+
+    a{
+        color: $dark-color;
+    }
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+
+    .logo{
+        color: $bold-color;
+        font-weight: bold;
+    }
+    nav{
+        
+
+        ul{
+            display: flex;
+            
+            a{
+                display: block;
+                padding: 0 1em;
+            }
+        }
+    }
+
+}
+.hero-design,.hero-design2,.hero-design3{
+    display: none;
+}
+.hero{
+    background-color: $dark-color;
+    color: $bold-compliment;
+    display: grid;
+    text-align: center;
+    padding: 4em;
+}
+.section{
+    padding: 4em 2em;
+    text-align: center;
+}
+.icon-container{
+    img{
+        width: 70px;
+        height: 70px;
+    }
+}
+.featured{
+    position: relative;
+    text-align: center;
+    img{
+        width: 200px;
+        height: 200px;
+    }
+}
+// .featured::before{
+//     content: "";
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//     border-left: 100 solid transparent;
+//     border-right: 200px solid transparent;
+//     border-bottom: 200px solid $bold-color;
+//     transform: rotate(135deg);
+//     opacity: 20%;
+//     top: 50px;
+//     left: 250px;
+//     z-index: -1;
+// }
+.subtitle{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+    color: $bold-color;
+    font-size: .9em;
+}
+.featured-title{
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: -.1em;
+    display: block;
+}
+.featured-desc{
+    color: $light-dark-text;
+    font-size: .9em;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+.skills{
+    background: $accent-color;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.skills-container{
+   
+    ul {
+        
+    
+        li{
+        background: white;
+        padding: 2em;
+        border-radius: 1em;
+        margin-bottom: 1em;
+        text-align: center;
+       
+        }
+    }
+    
+
+    .icon-container{
+        height: 100px;
+        display: grid;
+        place-content: center;
+        margin: 0 auto;
+
+        
+    } 
+}
+.skill-title{
+    font-weight: bold;
+
+}
+.skill-desc{
+margin-bottom: 1em;
+color: $light-dark-text;
+}
+.call-to-action{
+    background: white;
+    
+    text-align: center;
+   
+}
+.cta-container{
+   
+    color: $bold-color;
+    padding: 4em;
+    background-color: $bold-compliment;
+    font-size: 1em;
+    display: block;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: $bold-color;
+    }
+    
+    
+}
+@media only screen and (min-width:800px){
+    .featured, .call-to-action{
+        text-align: left;
+    }
+    .featured {
+        display: grid;
+        grid-template-columns: 40% auto;
+    }
+    .left{
+        margin-left:2em;
+        margin-top: 1em;
+    }
+
+    .left, .right{
+        display: grid;
+        place-content: center;
+    }
+    .skills{
+        
+        margin-bottom: -1.9em;
+    }
+    .skills-container ul{
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        gap: 1em;
+    }
+
+
+}
+
+@media only screen and (min-width:1050px){
+    .hero{
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 66% auto;
+        background: unset;
+        padding:0;
+        .content{
+            background: $dark-color;
+            padding: 6em 8em 6em 4em;
+            text-align: left;
+            
+            h1{
+                font-size: 3em;
+                line-height: 1.2em;
+            }
+        }
+    }
+    .hero-design{
+        display: unset;
+        margin-left: -50%;
+        margin-top: 15%;
+        width: 100%;
+    }
+  
+    .nav-container{
+        display: grid;
+        grid-template-columns: 66% auto;
+
+       
+    }
+    header{
+        padding: 2em 2em 2em 4em;
+    }
+    
+}
