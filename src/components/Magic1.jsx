@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Deck from 'deck-of-cards';
-import Card from 'deck-of-cards'
+import Card from 'deck-of-cards';
+import '../Magic.css';
 
 
 class Magic1 extends Component {
@@ -12,34 +13,39 @@ class Magic1 extends Component {
     subdeck3 = React.createRef() 
     state = { subdeck:[],a:[],b:[],c:[],combs:0 }
 
-    start = ()=>{
+  start = ()=>{
       let x = document.getElementById('stage')
+     
+    
       
     this.deck.shuffle()
-    let twentyone = this.deck.cards.splice(21)
-    twentyone.forEach(function (r){
-      r.unmount()
-    })
-      console.log(this.deck);
+     this.deck.cards.splice(21)
+    //pass the 21 card deck to 
+    console.log(this.deck.cards)
+    this.deal(this.deck.cards)
+      //this.deck.mount(x)
+      // this.deck.flip()
+      // this.deck.fan()
+     // this.getDeck()
+
      
-      this.deck.mount(x)
-      this.deck.flip()
-      this.deck.fan()
-      this.getDeck()
+    
+     
 
 
       
     }
 
-    getDeck=()=>{
-      let doc = require('deck-o-cards')
-      let deck = doc.randomizedDeck()
-      let subdeck = deck.slice(0,21)
-      this.deal(this.deck.cards)
+    // getDeck=()=>{
+    //   let doc = require('deck-o-cards')
+    //   let deck = doc.randomizedDeck()
+    //   let subdeck = deck.slice(0,21)
+    //   this.deal(this.deck.cards)
       
      
-    }
+    // }
     combine=(x)=>{
+      //combines the chosen deck into the middle 
       let combined=[]
       switch (x) {
         case 1:
@@ -74,6 +80,8 @@ class Magic1 extends Component {
     }
     
     deal=(subdeck)=>{
+      //takes 21 cards and split it into 3 decks. 
+      //its important that the cards are 'dealt' into the split decks and not just cut into 3.
       let a=[]
       let b=[]
       let c=[]
@@ -114,96 +122,79 @@ class Magic1 extends Component {
     revealCard=(combined)=>{
       if (this.state.combs===3) {
         this.setState({x: combined[10]}) 
+        console.log(combined[10])
         
         
       }
     
     }
     componentDidMount() {
-      //this.getDeck()
+      //=this.getDeck()
     }
     componentDidUpdate(prevProps, prevState) {
       let first  = Deck()
       let second  = Deck()
       let third  = Deck()
-
-      let x = document.getElementById('subdeck1')
-      let y = document.getElementById('subdeck2')
-      let z = document.getElementById('subdeck3')
-
+      let d1 = document.getElementById('subdeck1')
+      let d2 = document.getElementById('subdeck2')
+      let d3 = document.getElementById('subdeck3')
       first.cards=this.state.a
       second.cards=this.state.b
       third.cards=this.state.c
-      first.mount(x)
+      first.mount(d1)
       first.flip()
       first.fan()
-      second.mount(y)
+      second.mount(d2)
       second.flip()
       second.fan()
-      third.mount(z)
+      third.mount(d3)
       third.flip()
       third.fan()
-      console.log(first)
-      console.log(second)
-      console.log(third)
+      console.log(first.cards)
+      console.log(second.cards)
+      console.log(third.cards)
+
     
     }
     
       render() {
         
-        // let a ="deck"
-        // let b ="deck"
-        // let c ="deck"
-        // if (this.state.a.length >0){
-        //  a= <div className="columns subdeck1" ref={this.subdeck1}>
-    
-           
         
-        // {this.state.a.map((i,k)=>(
-        //   <div className="column ">{i}</div> 
-        //   ))}
-        //   <button className={this.state.x? "is-hidden": ""} onClick={e=>this.combine(1)}>Here</button>
-        //   </div>
-        // }
-        // if (this.state.b.length >0){
-        //   b= <div className="columns subdeck2" ref={this.subdeck2}>
-     
-            
-         
-        //  {this.state.b.map((i,k)=>(
-        //    <div className="column">{i}</div> 
-        //    ))}
-        //    <button className={this.state.x? "is-hidden": ""} onClick={e=>this.combine(2)}>Here</button>
-        //    </div>
-        //  }
-        //  if (this.state.c.length >0){
-        //   c= <div className="columns subdeck3" ref={this.subdeck3}>
-     
-            
-         
-        //  {this.state.c.map((i,k)=>(
-        //    <div className="column">{i}</div> 
-        //    ))}
-        //    <button className={this.state.x? "is-hidden": ""} onClick={e=>this.combine(3)}>Here</button>
-        //    </div>
-        //  }
         
         return (
-          <div className="main">
-            <button onClick={e=>this.start()}>Deal</button>
-            <div ref={this.stage} id="stage" className="stage"></div>
-            <div className="columns">
-            
+          <div className="container">
+            <div className="row"> <button onClick={e=>this.start()}>Deal</button></div>
+            <div className="row">
+              <div className="col-12">
+                 <div ref={this.stage} id="stage" className="stage"></div>
+              </div>
+            </div>
+            <div className="row " >
+              <div className="col ">
+                <div className="subdeck" id="subdeck1" ref={this.subdeck1}></div>
+               
+              </div>
+              <div className="col ">
+              <div className="subdeck" id="subdeck2" ref={this.subdeck2}></div>
+
+              </div>
+              <div className="col ">
+              <div className="subdeck" id="subdeck3" ref={this.subdeck3}></div>
+
+              </div>
+            </div>
+            <div className="row">
+              <div className="col"> <div className="btn btn-primary" onClick={e=>this.combine(1)}>Here</div></div>
+              <div className="col"> <div className="btn btn-primary" onClick={e=>this.combine(2)}>Here</div></div>
+              <div className="col"> <div className="btn btn-primary" onClick={e=>this.combine(3)}>Here</div></div>
+            </div>
+            <div className="row">
+              <div className="container">Your card is: </div>
             </div>
            
-             <div className="rows">
-             <div className="columns subdeck" id="subdeck1" ref={this.subdeck1}></div>
-             <div className="columns subdeck" id="subdeck2" ref={this.subdeck2}></div>
-             <div className="columns subdeck" id="subdeck3" ref={this.subdeck3}></div>
            
-            </div>
+           
     
-              <section>Your card is: {this.state.x}</section>
            
          
           

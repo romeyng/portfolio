@@ -3,20 +3,31 @@ import Geography from '../images/Geography.svg'
 import Devops from '../images/Devops.svg'
 import Teacher from '../images/Teacher.svg'
 import CardImage from '../images/13236360.png'
+import {gsap} from 'gsap'
+import { useEffect } from 'react';
+import { TimelineLite } from 'gsap/gsap-core';
 const Home = (props) => {
+      let square = React.createRef()
+      
+      useEffect(() => {
+            
+            gsap.from("#sq1", {x: "100", duration: 0.7})
+            
+            
+      }, [square])
     return ( 
         <>
               <div className="hero">
                     <div className="content">
-                          <h1>EMBRACING THE UNKNOWN</h1>
+                          <h1>EMBRACING UNKNOWN</h1>
                           <p>Meet Romeyn</p>
                     </div>
-                    <svg className="hero-design" width="100" height="100" viewBox="0 0 100 100" fill="none" >
-                  <rect className="square-anim" width="100" height="100" fill="#F9866F"/>
-                  <rect className="square-anim" width="100" height="100" fill="#F9866F"/>
-                  <rect className="square-anim" width="100" height="100" fill="#F9866F"/>
-                  <rect className="square-anim" width="100" height="100" fill="#F9866F"/>
-                  <rect className="square-anim" width="100" height="100" fill="#F9866F"/>
+                    <svg ref={square} className="hero-design" width="100" height="100" viewBox="0 0 100 100" fill="none" >
+                  <rect id="sq1" className="square-anim" width="100" height="100" fill="#F9866F"/>
+                  <rect id="sq2"  className="square-anim" width="100" height="100" fill="#F9866F"/>
+                  <rect id="sq3"  className="square-anim" width="100" height="100" fill="#F9866F"/>
+                  <rect id="sq4"  className="square-anim" width="100" height="100" fill="#F9866F"/>
+                  <rect id="sq5"  className="square-anim" width="100" height="100" fill="#F9866F"/>
 
                   </svg>
                   <svg className="triangle-anim hero-design2" width="329" height="100" viewBox="0 0 329 100" fill="none" xmlns="http://www.w3.org/2000/svg">

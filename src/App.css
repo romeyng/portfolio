@@ -193,7 +193,7 @@ header nav ul a {
   }
 }
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1000px) {
   .hero {
     height: 90vh;
     display: -ms-grid;

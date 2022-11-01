@@ -1,0 +1,12 @@
+.main{
+  display: flex;
+}
+.stage {
+  position: absolute;
+  /* top: 50%;
+  left: 25%; */
+}
+.subdeck{
+  position: absolute;
+}
+/*# sourceMappingURL=Magic.css.map */
